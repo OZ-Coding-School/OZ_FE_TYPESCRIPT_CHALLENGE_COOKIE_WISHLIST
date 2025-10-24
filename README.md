@@ -1,69 +1,26 @@
-# React + TypeScript + Vite
+### 기본 요구 사항
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **파일 구조 이해**
+   - `types.ts`: 모든 타입 정의 (3개 TODO)
+   - `components.tsx`: React 컴포넌트들 (3개 TODO)
+   - `App.tsx`: 메인 앱과 상태 관리 (4개 TODO)
+2. **타입 정의 완성 (`types.ts`)**
+   - `Snack` 인터페이스: 과자 정보를 나타내는 기본 타입
+   - `WishlistItem` 인터페이스: Snack을 확장한 위시리스트 아이템 타입
+   - `유니온` 타입들: 정렬 옵션과 필터 카테고리 타입
+3. **컴포넌트 타입 지정 (`components.tsx`)**
+   - 각 컴포넌트에 `React.FC<Props타입>` 형태로 타입 지정
+   - `import type` 구문을 사용하여 타입 `import`
+4. **상태 관리 타입 지정 (`App.tsx`)**
+   - `useState` 훅의 제네릭 타입 지정
+   - 함수들의 반환 타입과 매개변수 타입 지정
+   - `import type` 구문을 사용하여 타입 `import`
+5. **실행 및 확인**
+   - 모든 TypeScript 타입 오류가 해결된 상태로 완성
+   - 브라우저에서 정상적으로 동작하는지 확인
+   - 위시리스트 추가/제거, 필터링, 정렬 기능이 모두 작동하는지 테스트
 
-Currently, two official plugins are available:
+### 추가 요구사항
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 현재 파일들은 과제 가독성을 위해 하나의 파일에 여러 컴포넌트가 구성되거나, 컴포넌트 내에 많은 양의 정보가 담겨 있습니다.
+- React 심화에서 배웠던 내용들을 떠올리며 컴포넌트를 분리하고, 보다 좋은 코드를 작성할 수 있도록 리팩토링해보시기 바랍니다.
